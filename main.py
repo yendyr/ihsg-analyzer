@@ -140,20 +140,80 @@ with ThreadPoolExecutor(max_workers=max_threads) as executor:
             # =====================================
 
             reason_skip = []
+            # === PER Dinamis Berdasarkan Sektor ===
+            SECTOR_PER_AVG = {
+                "Financial Services": 12,
+                "Consumer Defensive": 18,
+                "Energy": 8,
+                "Technology": 25,
+                "Industrials": 15,
+                "Basic Materials": 14,
+                "Healthcare": 20,
+                "Real Estate": 10,
+                "Utilities": 10,
+            }
+
+            sector = info.get("sector")
+            avg_per = SECTOR_PER_AVG.get(sector, 15)
+            max_per_allowed = avg_per * 1.3   # batas atas 30% di atas rata-rata
+            min_per_allowed = avg_per * 0.4   # batas bawah 60% dari rata-rata
+
             if per is None:
                 reason_skip.append("PER: n/a")
-            elif per <= 0 or per > 25:
-                reason_skip.append(f"PER {per:.2f}")
+            elif per <= 0:
+                reason_skip.append(f"PER {per:.2f} (negatif)")
+            elif per < min_per_allowed:
+                reason_skip.append(f"PER {per:.2f} < sektor-min {min_per_allowed:.1f}")
+            elif per > max_per_allowed:
+                reason_skip.append(f"PER {per:.2f} > sektor-max {max_per_allowed:.1f}")
+
+            # === ROA Dinamis Berdasarkan Sektor ===
+            SECTOR_ROA_AVG = {
+                "Financial Services": 0.02,  # 2%
+                "Consumer Defensive": 0.10,  # 10%
+                "Energy": 0.07,
+                "Technology": 0.08,
+                "Industrials": 0.06,
+                "Basic Materials": 0.06,
+                "Healthcare": 0.07,
+                "Real Estate": 0.04,
+                "Utilities": 0.05,
+            }
+
+            avg_roa = SECTOR_ROA_AVG.get(sector, 0.06)
+            min_roa_allowed = avg_roa * 0.5   # boleh turun sampai 50% dari rata-rata sektor
+            max_roa_allowed = avg_roa * 2.0   # batas atas 2x rata-rata sektor
 
             if roa is None:
                 reason_skip.append("ROA: n/a")
-            elif roa < 0.05:
-                reason_skip.append(f"ROA {roa*100:.1f}%")
+            elif roa < min_roa_allowed:
+                reason_skip.append(f"ROA {roa*100:.1f}% < sektor-min {min_roa_allowed*100:.1f}%")
+            elif roa > max_roa_allowed:
+                reason_skip.append(f"ROA {roa*100:.1f}% > sektor-max {max_roa_allowed*100:.1f}%")
+
+            # === ROE Dinamis Berdasarkan Sektor ===
+            SECTOR_ROE_AVG = {
+                "Financial Services": 0.15,   # 15%
+                "Consumer Defensive": 0.20,   # 20%
+                "Energy": 0.12,
+                "Technology": 0.15,
+                "Industrials": 0.12,
+                "Basic Materials": 0.10,
+                "Healthcare": 0.13,
+                "Real Estate": 0.08,
+                "Utilities": 0.09,
+            }
+
+            avg_roe = SECTOR_ROE_AVG.get(sector, 0.12)
+            min_roe_allowed = avg_roe * 0.5   # boleh turun sampai 50% dari rata-rata sektor
+            max_roe_allowed = avg_roe * 2.0   # batas atas 2x rata-rata sektor
 
             if roe is None:
                 reason_skip.append("ROE: n/a")
-            elif roe < 0.08:
-                reason_skip.append(f"ROE {roe*100:.1f}%")
+            elif roe < min_roe_allowed:
+                reason_skip.append(f"ROE {roe*100:.1f}% < sektor-min {min_roe_allowed*100:.1f}%")
+            elif roe > max_roe_allowed:
+                reason_skip.append(f"ROE {roe*100:.1f}% > sektor-max {max_roe_allowed*100:.1f}%")
 
             recent = hist[-60:]
             low = recent["Low"].min()
