@@ -70,17 +70,34 @@ def fetch_stock(ticker):
         if now - entry.get("timestamp", 0) < CACHE_TTL and entry.get("hist") is not None:
             hist = hist_from_cache(entry["hist"])
             info = entry.get("info", {})
-            return (ticker, info, hist, None, None)
+            net_income = entry.get("net_income")
+            net_income_prev = entry.get("net_income_prev")
+            trend = entry.get("trend")
+            return (ticker, info, hist, net_income, net_income_prev, trend, None)
     try:
         data = yf.Ticker(ticker)
         info = data.info
         hist = data.history(period="3mo")
-
-        # === Ambil Net Profit kuartal terakhir ===
         quarterly = data.quarterly_financials
-        net_income_quarter = None
+
+        net_income = None
+        net_income_prev = None
+        trend = None
+
         if not quarterly.empty and "Net Income" in quarterly.index:
-            net_income_quarter = quarterly.loc["Net Income"].iloc[0]  # kuartal terbaru
+            netincomes = quarterly.loc["Net Income"].to_list()
+            if len(netincomes) >= 1:
+                net_income = netincomes[0]  # kuartal terbaru
+            if len(netincomes) >= 2:
+                net_income_prev = netincomes[1]  # kuartal sebelumnya
+            # Tentukan arah tren
+            if net_income is not None and net_income_prev is not None:
+                if net_income > net_income_prev:
+                    trend = "↑"
+                elif net_income < net_income_prev:
+                    trend = "↓"
+                else:
+                    trend = "→"
 
         new_cache_entry = None
         if hist is not None and not hist.empty:
@@ -91,11 +108,14 @@ def fetch_stock(ticker):
                 "timestamp": now,
                 "info": info,
                 "hist": hist_dict,
-                "net_income_quarter": net_income_quarter
+                "net_income": net_income,
+                "net_income_prev": net_income_prev,
+                "trend": trend
             }
-        return (ticker, info, hist, net_income_quarter, new_cache_entry)
+
+        return (ticker, info, hist, net_income, net_income_prev, trend, new_cache_entry)
     except Exception:
-        return (ticker, None, None, None, None)
+        return (ticker, None, None, None, None, None, None)
 
 # === INPUT MANUAL / FILE ===
 try:
@@ -124,7 +144,7 @@ with ThreadPoolExecutor(max_workers=max_threads) as executor:
     for future in tqdm(as_completed(futures), total=len(futures), desc="⏳ Memproses ticker"):
         tkr = futures[future]
         try:
-            ticker, info, hist, net_income_quarter, new_entry = future.result()
+            ticker, info, hist, net_income, net_income_prev, trend, new_entry = future.result()
             if new_entry:
                 new_cache_entries[ticker] = new_entry
             if hist is None or hist.empty:
@@ -140,7 +160,7 @@ with ThreadPoolExecutor(max_workers=max_threads) as executor:
 
             # ==== FILTER HANYA JIKA MODE FILE ====
             if not mode_prompt:
-                if net_income_quarter is None or net_income_quarter <= 0:
+                if net_income is None or net_income <= 0:
                     continue
                 if pbv is None or pbv <= 0 or pbv > 0.9:
                     continue
@@ -248,7 +268,7 @@ with ThreadPoolExecutor(max_workers=max_threads) as executor:
                 "FairValueProxy": fmt_num(fair_value_proxy),
                 "%ToFairProxy": fmt_num(tofair_proxy),
                 "PBV": pbv,
-                "NetProfit": format_rupiah(net_income_quarter),
+                "NetProfit": f"{format_rupiah(net_income)} {trend or ''}",
                 "Support": fmt_num(support),
                 "Resistance": fmt_num(resistance),
                 "Fundamental": fundamental_status
