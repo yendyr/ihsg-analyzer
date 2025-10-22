@@ -247,11 +247,27 @@ with ThreadPoolExecutor(max_workers=max_threads) as executor:
             elif roe > max_roe_allowed:
                 reason_skip.append(f"ROE {roe*100:.1f}% > sektor-max {max_roe_allowed*100:.1f}%")
 
-            recent = hist[-60:]
+            # === Kalkulasi Support & Resistance berbasis ATR (30 hari) ===
+            recent = hist.tail(30)
             low = recent["Low"].min()
             high = recent["High"].max()
-            support = round(low * 1.05, 2)
-            resistance = round(high * 0.95, 2)
+
+            # ATR 14-hari (standar umum)
+            tr = pd.concat([
+                recent["High"] - recent["Low"],
+                (recent["High"] - recent["Close"].shift()).abs(),
+                (recent["Low"] - recent["Close"].shift()).abs()
+            ], axis=1).max(axis=1)
+            atr = tr.rolling(window=14).mean().iloc[-1]
+
+            # Jika ATR tidak valid (misalnya data pendek), fallback ke deviasi 2% dari harga
+            if np.isnan(atr) or atr == 0:
+                atr = recent["Close"].iloc[-1] * 0.02
+
+            # Support = low + 0.5 × ATR
+            # Resistance = high - 0.5 × ATR
+            support = round(low + 0.5 * atr, 2)
+            resistance = round(high - 0.5 * atr, 2)
 
             fair_value_analyst = target_price
             fair_value_proxy = book_value * 0.9 if book_value else None
