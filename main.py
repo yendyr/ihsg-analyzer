@@ -137,7 +137,7 @@ else:
 # === Mulai proses ===
 output = []
 new_cache_entries = {}
-max_threads = 3
+max_threads = 2
 
 with ThreadPoolExecutor(max_workers=max_threads) as executor:
     futures = {executor.submit(fetch_stock, t): t for t in tickers}
@@ -317,9 +317,9 @@ if output:
         key=lambda x: (0 if x["Fundamental"] == "Sehat" else 1, x["PBV"])
     )
 
-    headers = ["Ticker", "Harga", "FairValueAnalyst", "%ToFairAnalyst",
+    headers = ["Code", "Harga", "FairValueAnalyst", "%ToFairAnalyst",
                "FairValueProxy", "%ToFairProxy", "PBV", "NetProfit",
-               "Support", "Resistance", "Fundamental"]
+               "Support", "Resist", "Fundamental"]
 
     rows = []
     for r in output_sorted:
