@@ -319,7 +319,7 @@ if output:
 
     headers = ["Code", "Harga", "FairValueAnalyst", "%ToFairAnalyst",
                "FairValueProxy", "%ToFairProxy", "PBV", "NetProfit",
-               "Support", "Resist", "Fundamental"]
+               "Support", "Resist", "State"]
 
     rows = []
     for r in output_sorted:
