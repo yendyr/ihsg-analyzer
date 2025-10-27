@@ -73,7 +73,7 @@ def fetch_stock(ticker):
             net_income = entry.get("net_income")
             net_income_prev = entry.get("net_income_prev")
             trend = entry.get("trend")
-            return (ticker, info, hist, net_income, net_income_prev, trend, None)
+            return (ticker, info, hist, net_income, net_income_prev, trend, None, None, None)
     try:
         data = yf.Ticker(ticker)
         info = data.info
@@ -99,6 +99,14 @@ def fetch_stock(ticker):
                 else:
                     trend = "→"
 
+        # === Likuiditas dan Volatilitas ===
+        liquidity = volatility = None
+        if hist is not None and not hist.empty:
+            liquidity = hist["Volume"].mean()
+            daily_returns = hist["Close"].pct_change().dropna()
+            if not daily_returns.empty:
+                volatility = daily_returns.std() * np.sqrt(252)
+
         new_cache_entry = None
         if hist is not None and not hist.empty:
             hist_serializable = hist.tail(60).reset_index()
@@ -113,9 +121,9 @@ def fetch_stock(ticker):
                 "trend": trend
             }
 
-        return (ticker, info, hist, net_income, net_income_prev, trend, new_cache_entry)
+        return (ticker, info, hist, net_income, net_income_prev, trend, liquidity, volatility, new_cache_entry)
     except Exception:
-        return (ticker, None, None, None, None, None, None)
+        return (ticker, None, None, None, None, None, None, None, None)
 
 # === INPUT MANUAL / FILE ===
 try:
@@ -144,7 +152,7 @@ with ThreadPoolExecutor(max_workers=max_threads) as executor:
     for future in tqdm(as_completed(futures), total=len(futures), desc="⏳ Memproses ticker"):
         tkr = futures[future]
         try:
-            ticker, info, hist, net_income, net_income_prev, trend, new_entry = future.result()
+            ticker, info, hist, net_income, net_income_prev, trend, liquidity, volatility, new_entry = future.result()
             if new_entry:
                 new_cache_entries[ticker] = new_entry
             if hist is None or hist.empty:
@@ -285,6 +293,8 @@ with ThreadPoolExecutor(max_workers=max_threads) as executor:
                 "%ToFairProxy": fmt_num(tofair_proxy),
                 "PBV": pbv,
                 "NetProfit": f"{format_rupiah(net_income)} {trend or ''}",
+                "Liquidity": f"{liquidity:,.0f}" if liquidity else "-",
+                "Volatility(%)": f"{volatility*100:.2f}" if volatility else "-",
                 "Support": fmt_num(support),
                 "Resistance": fmt_num(resistance),
                 "Fundamental": fundamental_status
@@ -299,6 +309,8 @@ with ThreadPoolExecutor(max_workers=max_threads) as executor:
                 "%ToFairProxy": "-",
                 "PBV": 999,
                 "NetProfit": "-",
+                "Liquidity": "-",
+                "Volatility(%)": "-",
                 "Support": "-",
                 "Resistance": "-",
                 "Fundamental": f"Error: {e}"
@@ -319,7 +331,7 @@ if output:
 
     headers = ["Code", "Harga", "FairValueAnalyst", "%ToFairAnalyst",
                "FairValueProxy", "%ToFairProxy", "PBV", "NetProfit",
-               "Support", "Resist", "State"]
+               "Liquidity", "Volatility(%)", "Supp.", "Resist.", "State"]
 
     rows = []
     for r in output_sorted:
@@ -346,6 +358,8 @@ if output:
             f"{color_start}{tofair_proxy}{color_end}",
             f"{color_start}{pbv_fmt}{color_end}",
             f"{color_start}{r['NetProfit']}{color_end}",
+            f"{color_start}{r['Liquidity']}{color_end}",
+            f"{color_start}{r['Volatility(%)']}{color_end}",
             f"{color_start}{r['Support']}{color_end}",
             f"{color_start}{r['Resistance']}{color_end}",
             f"{color_start}{r['Fundamental']}{color_end}"
