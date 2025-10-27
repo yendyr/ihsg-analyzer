@@ -73,43 +73,66 @@ def fetch_stock(ticker):
             net_income = entry.get("net_income")
             net_income_prev = entry.get("net_income_prev")
             trend = entry.get("trend")
-            return (ticker, info, hist, net_income, net_income_prev, trend, None, None, None)
+            liquidity = entry.get("liquidity")
+            volatility = entry.get("volatility")
+            volume_trend = entry.get("volume_trend", "")
+            return (ticker, info, hist, net_income, net_income_prev, trend, liquidity, volatility, volume_trend, None)
     try:
         data = yf.Ticker(ticker)
         info = data.info
-        hist = data.history(period="3mo")
+        hist = data.history(period="2mo")
+        hist = hist.tail(30)  # 🔹 hanya 30 hari terakhir
         quarterly = data.quarterly_financials
 
-        net_income = None
-        net_income_prev = None
-        trend = None
+        net_income = net_income_prev = trend = None
 
         if not quarterly.empty and "Net Income" in quarterly.index:
             netincomes = quarterly.loc["Net Income"].to_list()
+            if quarterly.columns[0] < quarterly.columns[-1]:
+                netincomes = netincomes[::-1]
             if len(netincomes) >= 1:
-                net_income = netincomes[0]  # kuartal terbaru
+                net_income = netincomes[0]
             if len(netincomes) >= 2:
-                net_income_prev = netincomes[1]  # kuartal sebelumnya
-            # Tentukan arah tren
+                net_income_prev = netincomes[1]
             if net_income is not None and net_income_prev is not None:
                 if net_income > net_income_prev:
-                    trend = "↑"
+                    trend = "▲"
                 elif net_income < net_income_prev:
-                    trend = "↓"
+                    trend = "▼"
                 else:
                     trend = "→"
 
-        # === Likuiditas dan Volatilitas ===
-        liquidity = volatility = None
+        # === Likuiditas & Volatilitas 30 hari ===
+        liquidity = volatility = volume_trend = None
         if hist is not None and not hist.empty:
-            liquidity = hist["Volume"].mean()
+            avg_volume = hist["Volume"].mean()
+            max_volume = hist["Volume"].max()
+            liquidity = (avg_volume / max_volume * 100) if max_volume > 0 else 0
+            liquidity = min(round(liquidity, 2), 100)
+
+            # Tren volume 3 hari terakhir
+            if len(hist) >= 4:
+                vols = hist["Volume"].tail(4).values
+                if vols[1] < vols[2] < vols[3]:
+                    volume_trend = " ▲"
+                elif vols[1] > vols[2] > vols[3]:
+                    volume_trend = " ▼"
+                else:
+                    volume_trend = ""
+            else:
+                volume_trend = ""
+
+            # Volatilitas 30 hari (harian)
             daily_returns = hist["Close"].pct_change().dropna()
             if not daily_returns.empty:
-                volatility = daily_returns.std() * np.sqrt(252)
+                volatility = round(daily_returns.std(), 4)
+
+        if volatility is not None:
+            volatility = round(volatility * 100, 2)
 
         new_cache_entry = None
         if hist is not None and not hist.empty:
-            hist_serializable = hist.tail(60).reset_index()
+            hist_serializable = hist.reset_index()
             hist_serializable['Date'] = hist_serializable['Date'].astype(str)
             hist_dict = hist_serializable.to_dict(orient='list')
             new_cache_entry = {
@@ -118,16 +141,19 @@ def fetch_stock(ticker):
                 "hist": hist_dict,
                 "net_income": net_income,
                 "net_income_prev": net_income_prev,
-                "trend": trend
+                "trend": trend,
+                "liquidity": liquidity,
+                "volatility": volatility,
+                "volume_trend": volume_trend
             }
 
-        return (ticker, info, hist, net_income, net_income_prev, trend, liquidity, volatility, new_cache_entry)
+        return (ticker, info, hist, net_income, net_income_prev, trend, liquidity, volatility, volume_trend, new_cache_entry)
     except Exception:
-        return (ticker, None, None, None, None, None, None, None, None)
+        return (ticker, None, None, None, None, None, None, None, None, None)
 
-# === INPUT MANUAL / FILE ===
+# === INPUT ===
 try:
-    code = input("Masukkan kode saham (atau ENTER untuk baca hanya dari list syariah): ").strip().upper()
+    code = input("Masukkan kode saham (atau ENTER untuk baca list syariah): ").strip().upper()
 except EOFError:
     code = ""
 
@@ -141,8 +167,7 @@ else:
     print(f"📃 Mode daftar syariah: {len(tickers)} ticker dibaca dari file")
     mode_prompt = False
 
-
-# === Mulai proses ===
+# === Proses ===
 output = []
 new_cache_entries = {}
 max_threads = 2
@@ -152,7 +177,7 @@ with ThreadPoolExecutor(max_workers=max_threads) as executor:
     for future in tqdm(as_completed(futures), total=len(futures), desc="⏳ Memproses ticker"):
         tkr = futures[future]
         try:
-            ticker, info, hist, net_income, net_income_prev, trend, liquidity, volatility, new_entry = future.result()
+            ticker, info, hist, net_income, net_income_prev, trend, liquidity, volatility, volume_trend, new_entry = future.result()
             if new_entry:
                 new_cache_entries[ticker] = new_entry
             if hist is None or hist.empty:
@@ -166,7 +191,7 @@ with ThreadPoolExecutor(max_workers=max_threads) as executor:
             per = info.get("trailingPE")
             roa = info.get("returnOnAssets")
 
-            # ==== FILTER HANYA JIKA MODE FILE ====
+            # === Filter ===
             if not mode_prompt:
                 if net_income is None or net_income <= 0:
                     continue
@@ -176,28 +201,18 @@ with ThreadPoolExecutor(max_workers=max_threads) as executor:
                     continue
                 if (not target_price) and book_value and (book_value * 0.9) < current_price:
                     continue
-            # =====================================
 
             reason_skip = []
 
-            # === PER Dinamis Berdasarkan Sektor ===
+            # === PER Berdasarkan Sektor ===
             SECTOR_PER_AVG = {
-                "Financial Services": 12,
-                "Consumer Defensive": 18,
-                "Energy": 8,
-                "Technology": 25,
-                "Industrials": 15,
-                "Basic Materials": 14,
-                "Healthcare": 20,
-                "Real Estate": 10,
-                "Utilities": 10,
+                "Financial Services": 12, "Consumer Defensive": 18, "Energy": 8, "Technology": 25,
+                "Industrials": 15, "Basic Materials": 14, "Healthcare": 20, "Real Estate": 10, "Utilities": 10
             }
-
             sector = info.get("sector")
             avg_per = SECTOR_PER_AVG.get(sector, 15)
-            max_per_allowed = avg_per * 1.3   # batas atas 30% di atas rata-rata
-            min_per_allowed = avg_per * 0.4   # batas bawah 60% dari rata-rata
-
+            max_per_allowed = avg_per * 1.3
+            min_per_allowed = avg_per * 0.4
             if per is None:
                 reason_skip.append("PER: n/a")
             elif per <= 0:
@@ -207,23 +222,14 @@ with ThreadPoolExecutor(max_workers=max_threads) as executor:
             elif per > max_per_allowed:
                 reason_skip.append(f"PER {per:.2f} > sektor-max {max_per_allowed:.1f}")
 
-            # === ROA Dinamis Berdasarkan Sektor ===
+            # === ROA Berdasarkan Sektor ===
             SECTOR_ROA_AVG = {
-                "Financial Services": 0.02,  # 2%
-                "Consumer Defensive": 0.10,  # 10%
-                "Energy": 0.07,
-                "Technology": 0.08,
-                "Industrials": 0.06,
-                "Basic Materials": 0.06,
-                "Healthcare": 0.07,
-                "Real Estate": 0.04,
-                "Utilities": 0.05,
+                "Financial Services": 0.02, "Consumer Defensive": 0.10, "Energy": 0.07, "Technology": 0.08,
+                "Industrials": 0.06, "Basic Materials": 0.06, "Healthcare": 0.07, "Real Estate": 0.04, "Utilities": 0.05
             }
-
             avg_roa = SECTOR_ROA_AVG.get(sector, 0.06)
-            min_roa_allowed = avg_roa * 0.5   # boleh turun sampai 50% dari rata-rata sektor
-            max_roa_allowed = avg_roa * 2.0   # batas atas 2x rata-rata sektor
-
+            min_roa_allowed = avg_roa * 0.5
+            max_roa_allowed = avg_roa * 2.0
             if roa is None:
                 reason_skip.append("ROA: n/a")
             elif roa < min_roa_allowed:
@@ -231,23 +237,14 @@ with ThreadPoolExecutor(max_workers=max_threads) as executor:
             elif roa > max_roa_allowed:
                 reason_skip.append(f"ROA {roa*100:.1f}% > sektor-max {max_roa_allowed*100:.1f}%")
 
-            # === ROE Dinamis Berdasarkan Sektor ===
+            # === ROE Berdasarkan Sektor ===
             SECTOR_ROE_AVG = {
-                "Financial Services": 0.15,   # 15%
-                "Consumer Defensive": 0.20,   # 20%
-                "Energy": 0.12,
-                "Technology": 0.15,
-                "Industrials": 0.12,
-                "Basic Materials": 0.10,
-                "Healthcare": 0.13,
-                "Real Estate": 0.08,
-                "Utilities": 0.09,
+                "Financial Services": 0.15, "Consumer Defensive": 0.20, "Energy": 0.12, "Technology": 0.15,
+                "Industrials": 0.12, "Basic Materials": 0.10, "Healthcare": 0.13, "Real Estate": 0.08, "Utilities": 0.09
             }
-
             avg_roe = SECTOR_ROE_AVG.get(sector, 0.12)
-            min_roe_allowed = avg_roe * 0.5   # boleh turun sampai 50% dari rata-rata sektor
-            max_roe_allowed = avg_roe * 2.0   # batas atas 2x rata-rata sektor
-
+            min_roe_allowed = avg_roe * 0.5
+            max_roe_allowed = avg_roe * 2.0
             if roe is None:
                 reason_skip.append("ROE: n/a")
             elif roe < min_roe_allowed:
@@ -255,25 +252,18 @@ with ThreadPoolExecutor(max_workers=max_threads) as executor:
             elif roe > max_roe_allowed:
                 reason_skip.append(f"ROE {roe*100:.1f}% > sektor-max {max_roe_allowed*100:.1f}%")
 
-            # === Kalkulasi Support & Resistance berbasis ATR (30 hari) ===
+            # === Support & Resistance (ATR 14 dari 30 hari) ===
             recent = hist.tail(30)
             low = recent["Low"].min()
             high = recent["High"].max()
-
-            # ATR 14-hari (standar umum)
             tr = pd.concat([
                 recent["High"] - recent["Low"],
                 (recent["High"] - recent["Close"].shift()).abs(),
                 (recent["Low"] - recent["Close"].shift()).abs()
             ], axis=1).max(axis=1)
             atr = tr.rolling(window=14).mean().iloc[-1]
-
-            # Jika ATR tidak valid (misalnya data pendek), fallback ke deviasi 2% dari harga
             if np.isnan(atr) or atr == 0:
                 atr = recent["Close"].iloc[-1] * 0.02
-
-            # Support = low + 0.5 × ATR
-            # Resistance = high - 0.5 × ATR
             support = round(low + 0.5 * atr, 2)
             resistance = round(high - 0.5 * atr, 2)
 
@@ -293,8 +283,8 @@ with ThreadPoolExecutor(max_workers=max_threads) as executor:
                 "%ToFairProxy": fmt_num(tofair_proxy),
                 "PBV": pbv,
                 "NetProfit": f"{format_rupiah(net_income)} {trend or ''}",
-                "Liquidity": f"{liquidity:,.0f}" if liquidity else "-",
-                "Volatility(%)": f"{volatility*100:.2f}" if volatility else "-",
+                "Liquidity": f"{liquidity:,.0f}{volume_trend or ''}" if liquidity is not None else "-",
+                "Volatility(%) (30d)": f"{volatility:.2f}" if volatility is not None else "-",
                 "Support": fmt_num(support),
                 "Resistance": fmt_num(resistance),
                 "Fundamental": fundamental_status
@@ -310,7 +300,7 @@ with ThreadPoolExecutor(max_workers=max_threads) as executor:
                 "PBV": 999,
                 "NetProfit": "-",
                 "Liquidity": "-",
-                "Volatility(%)": "-",
+                "Volatility(%) (30d)": "-",
                 "Support": "-",
                 "Resistance": "-",
                 "Fundamental": f"Error: {e}"
@@ -322,48 +312,66 @@ if new_cache_entries:
     current_cache.update(new_cache_entries)
     save_cache(current_cache)
 
-# === Output hasil ===
+# === Output ===
 if output:
-    output_sorted = sorted(
-        output,
-        key=lambda x: (0 if x["Fundamental"] == "Sehat" else 1, x["PBV"])
-    )
-
-    headers = ["Code", "Harga", "FairValueAnalyst", "%ToFairAnalyst",
-               "FairValueProxy", "%ToFairProxy", "PBV", "NetProfit",
-               "Liquidity", "Volatility(%)", "Supp.", "Resist.", "State"]
-
+    output_sorted = sorted(output, key=lambda x: (0 if x["Fundamental"] == "Sehat" else 1, x["PBV"]))
+    headers = ["Code","Harga","FairValueAnalyst","%ToFairAnalyst","FairValueProxy","%ToFairProxy","PBV",
+               "NetProfit","Liquidity","Volatility(%)","Supp.","Resist.","State"]
     rows = []
+
     for r in output_sorted:
-        fair_analyst = r["FairValueAnalyst"]
-        tofair_analyst_val = r["%ToFairAnalyst"]
-        tofair_proxy_val = r["%ToFairProxy"]
-        tofair_analyst = f"{tofair_analyst_val}%" if tofair_analyst_val not in ["-", None] else "-"
-        tofair_proxy = f"{tofair_proxy_val}%" if tofair_proxy_val not in ["-", None] else "-"
-        pbv_fmt = f"{r['PBV']:.2f}" if isinstance(r["PBV"], (float, int)) else "-"
+        tofair_analyst_val = None
+        tofair_proxy_val = None
 
-        if fair_analyst not in ["-", None]: 
-            color_start = "\033[92m" 
-            color_end = "\033[0m"
-        else: 
-            color_start = ""
-            color_end = ""
+        try:
+            tofair_analyst_val = float(str(r['%ToFairAnalyst']).replace('%','').replace(',','.'))
+        except:
+            pass
+        try:
+            tofair_proxy_val = float(str(r['%ToFairProxy']).replace('%','').replace(',','.'))
+        except:
+            pass
 
-        rows.append([
-            f"{color_start}{r['Ticker']}{color_end}",
-            f"{color_start}{r['Harga']}{color_end}",
-            f"{color_start}{fair_analyst}{color_end}",
-            f"{color_start}{tofair_analyst}{color_end}",
-            f"{color_start}{r['FairValueProxy']}{color_end}",
-            f"{color_start}{tofair_proxy}{color_end}",
-            f"{color_start}{pbv_fmt}{color_end}",
-            f"{color_start}{r['NetProfit']}{color_end}",
-            f"{color_start}{r['Liquidity']}{color_end}",
-            f"{color_start}{r['Volatility(%)']}{color_end}",
-            f"{color_start}{r['Support']}{color_end}",
-            f"{color_start}{r['Resistance']}{color_end}",
-            f"{color_start}{r['Fundamental']}{color_end}"
-        ])
+        pbv_val = r['PBV'] if isinstance(r['PBV'], (float, int)) else None
+        liquidity_str = str(r['Liquidity'])
+        liquidity_val = None
+        try:
+            # ambil angka di awal string sebelum spasi atau simbol panah
+            liquidity_val = float(liquidity_str.split()[0].replace(',', '.'))
+        except:
+            pass
+        netprofit_str = str(r['NetProfit'])
+
+        # 🟩 highlight logic
+        undervalued = (
+            (tofair_analyst_val is not None and tofair_analyst_val > 25)
+            or (tofair_proxy_val is not None and tofair_proxy_val > 50)
+        )
+        liquidity_high = liquidity_val is not None and liquidity_val > 40
+        liquidity_up = "▲" in liquidity_str
+        profit_up = "▲" in netprofit_str
+        pbv_low = pbv_val is not None and pbv_val < 0.8
+
+        highlight_green = False
+        if undervalued and (liquidity_high or liquidity_up) and (profit_up or pbv_low):
+            highlight_green = True
+
+        # === Format tampilan ===
+        tofair_analyst = f"{r['%ToFairAnalyst']}%" if r['%ToFairAnalyst'] not in ["-", None] else "-"
+        tofair_proxy = f"{r['%ToFairProxy']}%" if r['%ToFairProxy'] not in ["-", None] else "-"
+        pbv_fmt = f"{r['PBV']:.2f}" if isinstance(r['PBV'], (float, int)) else "-"
+
+        row = [
+            r['Ticker'], r['Harga'], r['FairValueAnalyst'], tofair_analyst, r['FairValueProxy'],
+            tofair_proxy, pbv_fmt, r['NetProfit'], r['Liquidity'], r['Volatility(%) (30d)'],
+            r['Support'], r['Resistance'], r['Fundamental']
+        ]
+
+        # 🟩 Jika memenuhi semua kondisi → warna hijau terang
+        if highlight_green:
+            row = [f"\033[92m{v}\033[0m" for v in row]  # ANSI bright green
+
+        rows.append(row)
 
     print(tabulate(rows, headers=headers, tablefmt="fancy_grid", stralign="right", numalign="right"))
 else:
