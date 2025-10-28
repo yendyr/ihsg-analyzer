@@ -195,11 +195,11 @@ with ThreadPoolExecutor(max_workers=max_threads) as executor:
             if not mode_prompt:
                 if net_income is None or net_income <= 0:
                     continue
-                if pbv is None or pbv <= 0 or pbv > 0.9:
+                if pbv is None or pbv <= 0 or pbv > 1:
                     continue
                 if target_price and target_price < current_price:
                     continue
-                if (not target_price) and book_value and (book_value * 0.9) < current_price:
+                if (not target_price) and book_value and (book_value * 1) < current_price:
                     continue
 
             reason_skip = []
