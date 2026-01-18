@@ -1,0 +1,2462 @@
+{
+  "AADI": {
+    "price": 7500.0,
+    "volume_2d": 14420400
+  },
+  "AALI": {
+    "price": 7750.0,
+    "volume_2d": 535150
+  },
+  "ABMM": {
+    "price": 3030.0,
+    "volume_2d": 2008850
+  },
+  "ACES": {
+    "price": 412.0,
+    "volume_2d": 28408450
+  },
+  "ADCP": {
+    "price": 59.0,
+    "volume_2d": 31737950
+  },
+  "ADES": {
+    "price": 15200.0,
+    "volume_2d": 18300
+  },
+  "ADHI": {
+    "price": 262.0,
+    "volume_2d": 17168950
+  },
+  "ADMG": {
+    "price": 214.0,
+    "volume_2d": 8020650
+  },
+  "ADMR": {
+    "price": 1980.0,
+    "volume_2d": 65923500
+  },
+  "ADRO": {
+    "price": 2230.0,
+    "volume_2d": 177183000
+  },
+  "AEGS": {
+    "price": 64.0,
+    "volume_2d": 16706000
+  },
+  "AGAR": {
+    "price": 266.0,
+    "volume_2d": 2426950
+  },
+  "AGII": {
+    "price": 1610.0,
+    "volume_2d": 1888800
+  },
+  "AIMS": {
+    "price": 426.0,
+    "volume_2d": 1730800
+  },
+  "AISA": {
+    "price": 153.0,
+    "volume_2d": 173582950
+  },
+  "AKKU": {
+    "price": 50.0,
+    "volume_2d": 2778200
+  },
+  "AKPI": {
+    "price": 580.0,
+    "volume_2d": 109550
+  },
+  "AKRA": {
+    "price": 1250.0,
+    "volume_2d": 33664050
+  },
+  "ALDO": {
+    "price": 615.0,
+    "volume_2d": 328750
+  },
+  "ALKA": {
+    "price": 500.0,
+    "volume_2d": 1488250
+  },
+  "AMAN": {
+    "price": 246.0,
+    "volume_2d": 3259400
+  },
+  "AMFG": {
+    "price": 3730.0,
+    "volume_2d": 34800
+  },
+  "AMIN": {
+    "price": 278.0,
+    "volume_2d": 3049050
+  },
+  "AMMS": {
+    "price": 540.0,
+    "volume_2d": 2019050
+  },
+  "ANDI": {
+    "price": 39.0,
+    "volume_2d": 69292200
+  },
+  "ANJT": {
+    "price": 1790.0,
+    "volume_2d": 411800
+  },
+  "ANTM": {
+    "price": 4050.0,
+    "volume_2d": 223400100
+  },
+  "APII": {
+    "price": 212.0,
+    "volume_2d": 443300
+  },
+  "APLI": {
+    "price": 384.0,
+    "volume_2d": 33300
+  },
+  "APLN": {
+    "price": 192.0,
+    "volume_2d": 311956850
+  },
+  "ARCI": {
+    "price": 1900.0,
+    "volume_2d": 422703050
+  },
+  "ARGO": {
+    "price": 1215.0,
+    "volume_2d": 1340900
+  },
+  "ARII": {
+    "price": 318.0,
+    "volume_2d": 463700
+  },
+  "ARNA": {
+    "price": 530.0,
+    "volume_2d": 3867400
+  },
+  "ARTA": {
+    "price": 2960.0,
+    "volume_2d": 10800
+  },
+  "ASGR": {
+    "price": 1200.0,
+    "volume_2d": 1193150
+  },
+  "ASHA": {
+    "price": 75.0,
+    "volume_2d": 27323650
+  },
+  "ASII": {
+    "price": 7050.0,
+    "volume_2d": 33534350
+  },
+  "ASLC": {
+    "price": 94.0,
+    "volume_2d": 44201500
+  },
+  "ASPI": {
+    "price": 585.0,
+    "volume_2d": 915150
+  },
+  "ASRI": {
+    "price": 183.0,
+    "volume_2d": 117254800
+  },
+  "ASSA": {
+    "price": 1185.0,
+    "volume_2d": 7958200
+  },
+  "ATAP": {
+    "price": 760.0,
+    "volume_2d": 0
+  },
+  "ATIC": {
+    "price": 710.0,
+    "volume_2d": 698850
+  },
+  "ATLA": {
+    "price": 65.0,
+    "volume_2d": 91806700
+  },
+  "AUTO": {
+    "price": 2710.0,
+    "volume_2d": 1832700
+  },
+  "AVIA": {
+    "price": 484.0,
+    "volume_2d": 11283150
+  },
+  "AWAN": {
+    "price": 184.0,
+    "volume_2d": 2037900
+  },
+  "AXIO": {
+    "price": 129.0,
+    "volume_2d": 1709250
+  },
+  "AYAM": {
+    "price": 438.0,
+    "volume_2d": 27624850
+  },
+  "AYLS": {
+    "price": 322.0,
+    "volume_2d": 78011100
+  },
+  "BABY": {
+    "price": 310.0,
+    "volume_2d": 3440150
+  },
+  "BAIK": {
+    "price": 173.0,
+    "volume_2d": 9012550
+  },
+  "BALI": {
+    "price": 1635.0,
+    "volume_2d": 17450
+  },
+  "BANK": {
+    "price": 960.0,
+    "volume_2d": 9687550
+  },
+  "BAPI": {
+    "price": 53.0,
+    "volume_2d": 19433800
+  },
+  "BATA": {
+    "price": 83.0,
+    "volume_2d": 3260900
+  },
+  "BATR": {
+    "price": 114.0,
+    "volume_2d": 1391000
+  },
+  "BAUT": {
+    "price": 58.0,
+    "volume_2d": 98571600
+  },
+  "BAYU": {
+    "price": 1375.0,
+    "volume_2d": 110550
+  },
+  "BBRM": {
+    "price": 252.0,
+    "volume_2d": 14686050
+  },
+  "BBSS": {
+    "price": 456.0,
+    "volume_2d": 9517800
+  },
+  "BCIP": {
+    "price": 94.0,
+    "volume_2d": 21405000
+  },
+  "BEEF": {
+    "price": 418.0,
+    "volume_2d": 7362950
+  },
+  "BELL": {
+    "price": 110.0,
+    "volume_2d": 436810600
+  },
+  "BESS": {
+    "price": 1585.0,
+    "volume_2d": 32650
+  },
+  "BEST": {
+    "price": 119.0,
+    "volume_2d": 28442750
+  },
+  "BIKE": {
+    "price": 615.0,
+    "volume_2d": 10923200
+  },
+  "BINO": {
+    "price": 134.0,
+    "volume_2d": 859850
+  },
+  "BIPP": {
+    "price": 86.0,
+    "volume_2d": 3578350
+  },
+  "BIRD": {
+    "price": 1740.0,
+    "volume_2d": 555850
+  },
+  "BISI": {
+    "price": 895.0,
+    "volume_2d": 472700
+  },
+  "BKDP": {
+    "price": 74.0,
+    "volume_2d": 7557400
+  },
+  "BKSL": {
+    "price": 152.0,
+    "volume_2d": 1001142050
+  },
+  "BLES": {
+    "price": 164.0,
+    "volume_2d": 3033500
+  },
+  "BLTZ": {
+    "price": 2870.0,
+    "volume_2d": 300
+  },
+  "BLUE": {
+    "price": 4130.0,
+    "volume_2d": 2981150
+  },
+  "BMBL": {
+    "price": 56.0,
+    "volume_2d": 11472200
+  },
+  "BMHS": {
+    "price": 202.0,
+    "volume_2d": 18512850
+  },
+  "BMSR": {
+    "price": 330.0,
+    "volume_2d": 60800
+  },
+  "BMTR": {
+    "price": 173.0,
+    "volume_2d": 50938300
+  },
+  "BNBR": {
+    "price": 234.0,
+    "volume_2d": 184518350
+  },
+  "BOAT": {
+    "price": 214.0,
+    "volume_2d": 26433400
+  },
+  "BOBA": {
+    "price": 182.0,
+    "volume_2d": 215650
+  },
+  "BOGA": {
+    "price": 1175.0,
+    "volume_2d": 142850
+  },
+  "BOLA": {
+    "price": 190.0,
+    "volume_2d": 3895500
+  },
+  "BOLT": {
+    "price": 1025.0,
+    "volume_2d": 5000
+  },
+  "BPTR": {
+    "price": 91.0,
+    "volume_2d": 524950
+  },
+  "BRAM": {
+    "price": 4700.0,
+    "volume_2d": 6900
+  },
+  "BRIS": {
+    "price": 2290.0,
+    "volume_2d": 63160750
+  },
+  "BRMS": {
+    "price": 1225.0,
+    "volume_2d": 302706050
+  },
+  "BRNA": {
+    "price": 725.0,
+    "volume_2d": 67500
+  },
+  "BRPT": {
+    "price": 2830.0,
+    "volume_2d": 78386800
+  },
+  "BRRC": {
+    "price": 133.0,
+    "volume_2d": 32223200
+  },
+  "BSBK": {
+    "price": 74.0,
+    "volume_2d": 85846400
+  },
+  "BSDE": {
+    "price": 955.0,
+    "volume_2d": 30780750
+  },
+  "BSML": {
+    "price": 284.0,
+    "volume_2d": 23820550
+  },
+  "BSSR": {
+    "price": 3930.0,
+    "volume_2d": 540550
+  },
+  "BTEK": {
+    "price": 30.0,
+    "volume_2d": 71832350
+  },
+  "BTPS": {
+    "price": 1210.0,
+    "volume_2d": 19964700
+  },
+  "BUAH": {
+    "price": 640.0,
+    "volume_2d": 200800
+  },
+  "BUKA": {
+    "price": 158.0,
+    "volume_2d": 81757150
+  },
+  "BUKK": {
+    "price": 1605.0,
+    "volume_2d": 191350
+  },
+  "BULL": {
+    "price": 630.0,
+    "volume_2d": 704910450
+  },
+  "BUMI": {
+    "price": 410.0,
+    "volume_2d": 5143652100
+  },
+  "BUVA": {
+    "price": 1885.0,
+    "volume_2d": 265319550
+  },
+  "BYAN": {
+    "price": 17150.0,
+    "volume_2d": 10050
+  },
+  "CAKK": {
+    "price": 185.0,
+    "volume_2d": 934900
+  },
+  "CAMP": {
+    "price": 214.0,
+    "volume_2d": 737050
+  },
+  "CANI": {
+    "price": 242.0,
+    "volume_2d": 1005350
+  },
+  "CARE": {
+    "price": 690.0,
+    "volume_2d": 2075000
+  },
+  "CASH": {
+    "price": 106.0,
+    "volume_2d": 2271050
+  },
+  "CBDK": {
+    "price": 7625.0,
+    "volume_2d": 24249550
+  },
+  "CBPE": {
+    "price": 306.0,
+    "volume_2d": 282400
+  },
+  "CBRE": {
+    "price": 940.0,
+    "volume_2d": 20503550
+  },
+  "CCSI": {
+    "price": 356.0,
+    "volume_2d": 609150
+  },
+  "CEKA": {
+    "price": 2440.0,
+    "volume_2d": 4800
+  },
+  "CGAS": {
+    "price": 191.0,
+    "volume_2d": 7889700
+  },
+  "CHEK": {
+    "price": 158.0,
+    "volume_2d": 3917100
+  },
+  "CHEM": {
+    "price": 133.0,
+    "volume_2d": 220873950
+  },
+  "CINT": {
+    "price": 222.0,
+    "volume_2d": 2371950
+  },
+  "CITA": {
+    "price": 5075.0,
+    "volume_2d": 962950
+  },
+  "CITY": {
+    "price": 328.0,
+    "volume_2d": 1555100
+  },
+  "CLEO": {
+    "price": 454.0,
+    "volume_2d": 10176150
+  },
+  "CLPI": {
+    "price": 1535.0,
+    "volume_2d": 68900
+  },
+  "CMNP": {
+    "price": 1600.0,
+    "volume_2d": 666300
+  },
+  "CMRY": {
+    "price": 5225.0,
+    "volume_2d": 1630300
+  },
+  "CNKO": {
+    "price": 79.0,
+    "volume_2d": 41994900
+  },
+  "CNMA": {
+    "price": 122.0,
+    "volume_2d": 29728850
+  },
+  "COAL": {
+    "price": 85.0,
+    "volume_2d": 128691200
+  },
+  "CPIN": {
+    "price": 4570.0,
+    "volume_2d": 9559800
+  },
+  "CPRO": {
+    "price": 73.0,
+    "volume_2d": 665096400
+  },
+  "CRAB": {
+    "price": 266.0,
+    "volume_2d": 2497650
+  },
+  "CRSN": {
+    "price": 148.0,
+    "volume_2d": 3494700
+  },
+  "CSAP": {
+    "price": 324.0,
+    "volume_2d": 221050
+  },
+  "CSIS": {
+    "price": 318.0,
+    "volume_2d": 14408900
+  },
+  "CSMI": {
+    "price": 183.0,
+    "volume_2d": 30979900
+  },
+  "CSRA": {
+    "price": 915.0,
+    "volume_2d": 2649750
+  },
+  "CTBN": {
+    "price": 8175.0,
+    "volume_2d": 111500
+  },
+  "CTRA": {
+    "price": 940.0,
+    "volume_2d": 96955550
+  },
+  "CYBR": {
+    "price": 1745.0,
+    "volume_2d": 11529400
+  },
+  "DAAZ": {
+    "price": 3650.0,
+    "volume_2d": 12889250
+  },
+  "DADA": {
+    "price": 51.0,
+    "volume_2d": 484998050
+  },
+  "DAYA": {
+    "price": 1275.0,
+    "volume_2d": 9050
+  },
+  "DCII": {
+    "price": 218000.0,
+    "volume_2d": 2350
+  },
+  "DEFI": {
+    "price": 278.0,
+    "volume_2d": 1457500
+  },
+  "DEPO": {
+    "price": 268.0,
+    "volume_2d": 421250
+  },
+  "DEWA": {
+    "price": 765.0,
+    "volume_2d": 922053150
+  },
+  "DEWI": {
+    "price": 157.0,
+    "volume_2d": 25656750
+  },
+  "DGNS": {
+    "price": 272.0,
+    "volume_2d": 26845300
+  },
+  "DGWG": {
+    "price": 384.0,
+    "volume_2d": 12577550
+  },
+  "DILD": {
+    "price": 156.0,
+    "volume_2d": 38409150
+  },
+  "DIVA": {
+    "price": 169.0,
+    "volume_2d": 1547850
+  },
+  "DKFT": {
+    "price": 930.0,
+    "volume_2d": 61857900
+  },
+  "DKHH": {
+    "price": 100.0,
+    "volume_2d": 79178150
+  },
+  "DMAS": {
+    "price": 141.0,
+    "volume_2d": 543961050
+  },
+  "DMMX": {
+    "price": 348.0,
+    "volume_2d": 1223600
+  },
+  "DMND": {
+    "price": 785.0,
+    "volume_2d": 306900
+  },
+  "DNET": {
+    "price": 9050.0,
+    "volume_2d": 5050
+  },
+  "DOOH": {
+    "price": 262.0,
+    "volume_2d": 271660450
+  },
+  "DOSS": {
+    "price": 218.0,
+    "volume_2d": 14526950
+  },
+  "DRMA": {
+    "price": 1050.0,
+    "volume_2d": 693400
+  },
+  "DSFI": {
+    "price": 100.0,
+    "volume_2d": 9843900
+  },
+  "DSNG": {
+    "price": 1450.0,
+    "volume_2d": 21443550
+  },
+  "DSSA": {
+    "price": 111000.0,
+    "volume_2d": 1828450
+  },
+  "DUTI": {
+    "price": 4220.0,
+    "volume_2d": 1950
+  },
+  "DVLA": {
+    "price": 1660.0,
+    "volume_2d": 17250
+  },
+  "DWGL": {
+    "price": 318.0,
+    "volume_2d": 1397750
+  },
+  "DYAN": {
+    "price": 97.0,
+    "volume_2d": 5984700
+  },
+  "EAST": {
+    "price": 94.0,
+    "volume_2d": 6442700
+  },
+  "ECII": {
+    "price": 200.0,
+    "volume_2d": 5490650
+  },
+  "EKAD": {
+    "price": 200.0,
+    "volume_2d": 7256900
+  },
+  "ELIT": {
+    "price": 236.0,
+    "volume_2d": 23592200
+  },
+  "ELSA": {
+    "price": 540.0,
+    "volume_2d": 42884850
+  },
+  "ELTY": {
+    "price": 90.0,
+    "volume_2d": 1268700750
+  },
+  "EMDE": {
+    "price": 101.0,
+    "volume_2d": 5143350
+  },
+  "EMTK": {
+    "price": 1050.0,
+    "volume_2d": 70643000
+  },
+  "ENAK": {
+    "price": 585.0,
+    "volume_2d": 95650
+  },
+  "ENRG": {
+    "price": 1530.0,
+    "volume_2d": 136903550
+  },
+  "EPAC": {
+    "price": 54.0,
+    "volume_2d": 12966850
+  },
+  "EPMT": {
+    "price": 2310.0,
+    "volume_2d": 6700
+  },
+  "ERAA": {
+    "price": 406.0,
+    "volume_2d": 29814900
+  },
+  "ERAL": {
+    "price": 332.0,
+    "volume_2d": 12703100
+  },
+  "ESIP": {
+    "price": 83.0,
+    "volume_2d": 78776150
+  },
+  "ESSA": {
+    "price": 660.0,
+    "volume_2d": 126805250
+  },
+  "ESTA": {
+    "price": 348.0,
+    "volume_2d": 9621850
+  },
+  "EURO": {
+    "price": 650.0,
+    "volume_2d": 15780000
+  },
+  "EXCL": {
+    "price": 4010.0,
+    "volume_2d": 19716400
+  },
+  "FAST": {
+    "price": 590.0,
+    "volume_2d": 5738950
+  },
+  "FASW": {
+    "price": 5312.4970703125,
+    "volume_2d": 0
+  },
+  "FILM": {
+    "price": 14500.0,
+    "volume_2d": 0
+  },
+  "FIRE": {
+    "price": 258.0,
+    "volume_2d": 0
+  },
+  "FISH": {
+    "price": 1085.0,
+    "volume_2d": 268200
+  },
+  "FITT": {
+    "price": 498.0,
+    "volume_2d": 1545600
+  },
+  "FLMC": {
+    "price": 195.0,
+    "volume_2d": 10533650
+  },
+  "FMII": {
+    "price": 290.0,
+    "volume_2d": 181450
+  },
+  "FOLK": {
+    "price": 1000.0,
+    "volume_2d": 52496400
+  },
+  "FOOD": {
+    "price": 312.0,
+    "volume_2d": 223050
+  },
+  "FORE": {
+    "price": 550.0,
+    "volume_2d": 3299000
+  },
+  "FPNI": {
+    "price": 805.0,
+    "volume_2d": 11505250
+  },
+  "FUTR": {
+    "price": 610.0,
+    "volume_2d": 20467800
+  },
+  "FWCT": {
+    "price": 140.0,
+    "volume_2d": 8611400
+  },
+  "GAMA": {
+    "price": 18.0,
+    "volume_2d": 0
+  },
+  "GDST": {
+    "price": 127.0,
+    "volume_2d": 7247500
+  },
+  "GDYR": {
+    "price": 1050.0,
+    "volume_2d": 317150
+  },
+  "GEMA": {
+    "price": 97.0,
+    "volume_2d": 7339950
+  },
+  "GEMS": {
+    "price": 8300.0,
+    "volume_2d": 64900
+  },
+  "GGRP": {
+    "price": 344.0,
+    "volume_2d": 3054400
+  },
+  "GHON": {
+    "price": 1740.0,
+    "volume_2d": 17100
+  },
+  "GIAA": {
+    "price": 95.0,
+    "volume_2d": 182732100
+  },
+  "GJTL": {
+    "price": 1120.0,
+    "volume_2d": 10999750
+  },
+  "GLVA": {
+    "price": 400.0,
+    "volume_2d": 85300
+  },
+  "GMTD": {
+    "price": 2570.0,
+    "volume_2d": 5700
+  },
+  "GOLD": {
+    "price": 336.0,
+    "volume_2d": 208800
+  },
+  "GOLF": {
+    "price": 264.0,
+    "volume_2d": 85435400
+  },
+  "GOOD": {
+    "price": 350.0,
+    "volume_2d": 820900
+  },
+  "GOTO": {
+    "price": 68.0,
+    "volume_2d": 11999442650
+  },
+  "GPRA": {
+    "price": 136.0,
+    "volume_2d": 26001300
+  },
+  "GPSO": {
+    "price": 640.0,
+    "volume_2d": 5898250
+  },
+  "GRIA": {
+    "price": 127.0,
+    "volume_2d": 16353800
+  },
+  "GRPH": {
+    "price": 65.0,
+    "volume_2d": 4653250
+  },
+  "GRPM": {
+    "price": 134.0,
+    "volume_2d": 0
+  },
+  "GTBO": {
+    "price": 298.0,
+    "volume_2d": 671500
+  },
+  "GTSI": {
+    "price": 462.0,
+    "volume_2d": 526607350
+  },
+  "GULA": {
+    "price": 362.0,
+    "volume_2d": 12179100
+  },
+  "GUNA": {
+    "price": 292.0,
+    "volume_2d": 1069900
+  },
+  "GWSA": {
+    "price": 246.0,
+    "volume_2d": 26021300
+  },
+  "GZCO": {
+    "price": 256.0,
+    "volume_2d": 15242800
+  },
+  "HAJJ": {
+    "price": 150.0,
+    "volume_2d": 20204100
+  },
+  "HALO": {
+    "price": 92.0,
+    "volume_2d": 6907550
+  },
+  "HDIT": {
+    "price": 77.0,
+    "volume_2d": 70634600
+  },
+  "HEAL": {
+    "price": 1415.0,
+    "volume_2d": 4954350
+  },
+  "HELI": {
+    "price": 228.0,
+    "volume_2d": 283200
+  },
+  "HERO": {
+    "price": 464.0,
+    "volume_2d": 71250
+  },
+  "HEXA": {
+    "price": 4360.0,
+    "volume_2d": 539450
+  },
+  "HITS": {
+    "price": 116.0,
+    "volume_2d": 0
+  },
+  "HOKI": {
+    "price": 80.0,
+    "volume_2d": 299386400
+  },
+  "HOPE": {
+    "price": 230.0,
+    "volume_2d": 42385600
+  },
+  "HRME": {
+    "price": 72.0,
+    "volume_2d": 16696900
+  },
+  "HRUM": {
+    "price": 1230.0,
+    "volume_2d": 99931800
+  },
+  "HUMI": {
+    "price": 356.0,
+    "volume_2d": 0
+  },
+  "HYGN": {
+    "price": 176.0,
+    "volume_2d": 805000
+  },
+  "IATA": {
+    "price": 140.0,
+    "volume_2d": 241779700
+  },
+  "IBST": {
+    "price": 5950.0,
+    "volume_2d": 2450
+  },
+  "ICBP": {
+    "price": 8050.0,
+    "volume_2d": 5491850
+  },
+  "ICON": {
+    "price": 92.0,
+    "volume_2d": 1742500
+  },
+  "IDEA": {
+    "price": 154.0,
+    "volume_2d": 12936650
+  },
+  "IDPR": {
+    "price": 290.0,
+    "volume_2d": 286700
+  },
+  "IFII": {
+    "price": 230.0,
+    "volume_2d": 190200
+  },
+  "IFSH": {
+    "price": 2100.0,
+    "volume_2d": 0
+  },
+  "IGAR": {
+    "price": 515.0,
+    "volume_2d": 88450
+  },
+  "IIKP": {
+    "price": 50.0,
+    "volume_2d": 0
+  },
+  "IKAI": {
+    "price": 36.0,
+    "volume_2d": 28963750
+  },
+  "IKAN": {
+    "price": 112.0,
+    "volume_2d": 2939000
+  },
+  "IKBI": {
+    "price": 525.0,
+    "volume_2d": 207500
+  },
+  "IKPM": {
+    "price": 254.0,
+    "volume_2d": 3330400
+  },
+  "IMPC": {
+    "price": 3310.0,
+    "volume_2d": 68552900
+  },
+  "INCI": {
+    "price": 745.0,
+    "volume_2d": 123150
+  },
+  "INCO": {
+    "price": 6350.0,
+    "volume_2d": 81219900
+  },
+  "INDF": {
+    "price": 6750.0,
+    "volume_2d": 7839550
+  },
+  "INDO": {
+    "price": 394.0,
+    "volume_2d": 65635450
+  },
+  "INDR": {
+    "price": 3480.0,
+    "volume_2d": 1250450
+  },
+  "INDS": {
+    "price": 555.0,
+    "volume_2d": 0
+  },
+  "INDX": {
+    "price": 158.0,
+    "volume_2d": 4440400
+  },
+  "INDY": {
+    "price": 3450.0,
+    "volume_2d": 57828850
+  },
+  "INKP": {
+    "price": 10000.0,
+    "volume_2d": 6983900
+  },
+  "INTD": {
+    "price": 300.0,
+    "volume_2d": 6514750
+  },
+  "INTP": {
+    "price": 6975.0,
+    "volume_2d": 1449550
+  },
+  "IPAC": {
+    "price": 178.0,
+    "volume_2d": 345000
+  },
+  "IPCM": {
+    "price": 348.0,
+    "volume_2d": 1415900
+  },
+  "IPOL": {
+    "price": 129.0,
+    "volume_2d": 2837450
+  },
+  "IPTV": {
+    "price": 63.0,
+    "volume_2d": 53372550
+  },
+  "IRRA": {
+    "price": 434.0,
+    "volume_2d": 14368400
+  },
+  "IRSX": {
+    "price": 725.0,
+    "volume_2d": 185218550
+  },
+  "ISAP": {
+    "price": 39.0,
+    "volume_2d": 120940500
+  },
+  "ISAT": {
+    "price": 2260.0,
+    "volume_2d": 19787300
+  },
+  "ISSP": {
+    "price": 446.0,
+    "volume_2d": 649700
+  },
+  "ITMA": {
+    "price": 1960.0,
+    "volume_2d": 35955900
+  },
+  "ITMG": {
+    "price": 22275.0,
+    "volume_2d": 1406150
+  },
+  "JATI": {
+    "price": 128.0,
+    "volume_2d": 3843050
+  },
+  "JAWA": {
+    "price": 193.0,
+    "volume_2d": 1541450
+  },
+  "JAYA": {
+    "price": 122.0,
+    "volume_2d": 4335500
+  },
+  "JECC": {
+    "price": 1160.0,
+    "volume_2d": 42250
+  },
+  "JGLE": {
+    "price": 81.0,
+    "volume_2d": 244641400
+  },
+  "JIHD": {
+    "price": 625.0,
+    "volume_2d": 1534950
+  },
+  "JKON": {
+    "price": 90.0,
+    "volume_2d": 46923200
+  },
+  "JMAS": {
+    "price": 304.0,
+    "volume_2d": 4660750
+  },
+  "JPFA": {
+    "price": 2700.0,
+    "volume_2d": 71482400
+  },
+  "JRPT": {
+    "price": 1070.0,
+    "volume_2d": 280400
+  },
+  "JSMR": {
+    "price": 3600.0,
+    "volume_2d": 6522350
+  },
+  "JSPT": {
+    "price": 3180.0,
+    "volume_2d": 9200
+  },
+  "JTPE": {
+    "price": 580.0,
+    "volume_2d": 5432600
+  },
+  "KAQI": {
+    "price": 70.0,
+    "volume_2d": 40882450
+  },
+  "KBAG": {
+    "price": 61.0,
+    "volume_2d": 31863250
+  },
+  "KBLI": {
+    "price": 326.0,
+    "volume_2d": 579150
+  },
+  "KBLM": {
+    "price": 344.0,
+    "volume_2d": 121900
+  },
+  "KDSI": {
+    "price": 464.0,
+    "volume_2d": 20450
+  },
+  "KDTN": {
+    "price": 1210.0,
+    "volume_2d": 10682400
+  },
+  "KEEN": {
+    "price": 1020.0,
+    "volume_2d": 9695600
+  },
+  "KEJU": {
+    "price": 615.0,
+    "volume_2d": 757300
+  },
+  "KIAS": {
+    "price": 21.0,
+    "volume_2d": 0
+  },
+  "KICI": {
+    "price": 192.0,
+    "volume_2d": 3701850
+  },
+  "KIJA": {
+    "price": 308.0,
+    "volume_2d": 436214000
+  },
+  "KING": {
+    "price": 212.0,
+    "volume_2d": 2424150
+  },
+  "KINO": {
+    "price": 1285.0,
+    "volume_2d": 41400
+  },
+  "KIOS": {
+    "price": 232.0,
+    "volume_2d": 12186650
+  },
+  "KKES": {
+    "price": 48.0,
+    "volume_2d": 17682800
+  },
+  "KKGI": {
+    "price": 362.0,
+    "volume_2d": 9549900
+  },
+  "KLBF": {
+    "price": 1205.0,
+    "volume_2d": 54257400
+  },
+  "KLIN": {
+    "price": 180.0,
+    "volume_2d": 124050
+  },
+  "KMDS": {
+    "price": 635.0,
+    "volume_2d": 1196300
+  },
+  "KOBX": {
+    "price": 208.0,
+    "volume_2d": 1822500
+  },
+  "KOCI": {
+    "price": 260.0,
+    "volume_2d": 0
+  },
+  "KOIN": {
+    "price": 101.0,
+    "volume_2d": 234650
+  },
+  "KONI": {
+    "price": 2110.0,
+    "volume_2d": 29750
+  },
+  "KOPI": {
+    "price": 300.0,
+    "volume_2d": 448750
+  },
+  "KOTA": {
+    "price": 78.0,
+    "volume_2d": 93292700
+  },
+  "KPIG": {
+    "price": 262.0,
+    "volume_2d": 115438100
+  },
+  "KUAS": {
+    "price": 80.0,
+    "volume_2d": 58523050
+  },
+  "LABA": {
+    "price": 166.0,
+    "volume_2d": 12864500
+  },
+  "LABS": {
+    "price": 137.0,
+    "volume_2d": 894300
+  },
+  "LAND": {
+    "price": 87.0,
+    "volume_2d": 26124750
+  },
+  "LFLO": {
+    "price": 670.0,
+    "volume_2d": 254000
+  },
+  "LION": {
+    "price": 442.0,
+    "volume_2d": 306550
+  },
+  "LIVE": {
+    "price": 346.0,
+    "volume_2d": 25040400
+  },
+  "LMAX": {
+    "price": 206.0,
+    "volume_2d": 17316450
+  },
+  "LMPI": {
+    "price": 142.0,
+    "volume_2d": 702500
+  },
+  "LMSH": {
+    "price": 256.0,
+    "volume_2d": 0
+  },
+  "LPCK": {
+    "price": 635.0,
+    "volume_2d": 1218000
+  },
+  "LPIN": {
+    "price": 448.0,
+    "volume_2d": 173650
+  },
+  "LPKR": {
+    "price": 96.0,
+    "volume_2d": 146360400
+  },
+  "LPPF": {
+    "price": 1800.0,
+    "volume_2d": 2924750
+  },
+  "LRNA": {
+    "price": 254.0,
+    "volume_2d": 2658150
+  },
+  "LSIP": {
+    "price": 1190.0,
+    "volume_2d": 6112850
+  },
+  "LTLS": {
+    "price": 870.0,
+    "volume_2d": 27800
+  },
+  "LUCK": {
+    "price": 144.0,
+    "volume_2d": 128909350
+  },
+  "MAHA": {
+    "price": 180.0,
+    "volume_2d": 27386150
+  },
+  "MAIN": {
+    "price": 850.0,
+    "volume_2d": 2859700
+  },
+  "MAPA": {
+    "price": 630.0,
+    "volume_2d": 8801800
+  },
+  "MAPB": {
+    "price": 1600.0,
+    "volume_2d": 5600
+  },
+  "MAPI": {
+    "price": 1180.0,
+    "volume_2d": 44284250
+  },
+  "MARK": {
+    "price": 825.0,
+    "volume_2d": 22206600
+  },
+  "MAXI": {
+    "price": 53.0,
+    "volume_2d": 8909150
+  },
+  "MBAP": {
+    "price": 1775.0,
+    "volume_2d": 481600
+  },
+  "MBMA": {
+    "price": 790.0,
+    "volume_2d": 924825950
+  },
+  "MBTO": {
+    "price": 176.0,
+    "volume_2d": 450050
+  },
+  "MCAS": {
+    "price": 585.0,
+    "volume_2d": 239850
+  },
+  "MCOL": {
+    "price": 3690.0,
+    "volume_2d": 8750
+  },
+  "MDIY": {
+    "price": 990.0,
+    "volume_2d": 128900
+  },
+  "MDKA": {
+    "price": 2990.0,
+    "volume_2d": 126729250
+  },
+  "MDKI": {
+    "price": 218.0,
+    "volume_2d": 1994200
+  },
+  "MDLA": {
+    "price": 252.0,
+    "volume_2d": 1806450
+  },
+  "MDLN": {
+    "price": 69.0,
+    "volume_2d": 40309350
+  },
+  "MEDC": {
+    "price": 1460.0,
+    "volume_2d": 126019950
+  },
+  "MEDS": {
+    "price": 78.0,
+    "volume_2d": 9392550
+  },
+  "MEJA": {
+    "price": 157.0,
+    "volume_2d": 104102650
+  },
+  "MERI": {
+    "price": 183.0,
+    "volume_2d": 21260850
+  },
+  "MERK": {
+    "price": 3340.0,
+    "volume_2d": 6550
+  },
+  "META": {
+    "price": 238.0,
+    "volume_2d": 0
+  },
+  "MFMI": {
+    "price": 1300.0,
+    "volume_2d": 0
+  },
+  "MGLV": {
+    "price": 2600.0,
+    "volume_2d": 687850
+  },
+  "MGNA": {
+    "price": 240.0,
+    "volume_2d": 12656500
+  },
+  "MHKI": {
+    "price": 238.0,
+    "volume_2d": 41912350
+  },
+  "MICE": {
+    "price": 570.0,
+    "volume_2d": 877650
+  },
+  "MIDI": {
+    "price": 362.0,
+    "volume_2d": 21930100
+  },
+  "MIKA": {
+    "price": 2380.0,
+    "volume_2d": 5320150
+  },
+  "MINA": {
+    "price": 635.0,
+    "volume_2d": 575315550
+  },
+  "MINE": {
+    "price": 515.0,
+    "volume_2d": 4667650
+  },
+  "MKAP": {
+    "price": 655.0,
+    "volume_2d": 3454050
+  },
+  "MKPI": {
+    "price": 24000.0,
+    "volume_2d": 6850
+  },
+  "MKTR": {
+    "price": 149.0,
+    "volume_2d": 737700
+  },
+  "MLIA": {
+    "price": 342.0,
+    "volume_2d": 3202400
+  },
+  "MLPL": {
+    "price": 146.0,
+    "volume_2d": 208178150
+  },
+  "MMIX": {
+    "price": 206.0,
+    "volume_2d": 1395900
+  },
+  "MNCN": {
+    "price": 290.0,
+    "volume_2d": 20180250
+  },
+  "MPMX": {
+    "price": 1010.0,
+    "volume_2d": 4097250
+  },
+  "MPPA": {
+    "price": 62.0,
+    "volume_2d": 33520350
+  },
+  "MRAT": {
+    "price": 458.0,
+    "volume_2d": 1150650
+  },
+  "MREI": {
+    "price": 1130.0,
+    "volume_2d": 370350
+  },
+  "MSIN": {
+    "price": 460.0,
+    "volume_2d": 39552050
+  },
+  "MSJA": {
+    "price": 340.0,
+    "volume_2d": 14542750
+  },
+  "MSKY": {
+    "price": 114.0,
+    "volume_2d": 134102150
+  },
+  "MTDL": {
+    "price": 585.0,
+    "volume_2d": 4816900
+  },
+  "MTFN": {
+    "price": 42.0,
+    "volume_2d": 18964650
+  },
+  "MTLA": {
+    "price": 645.0,
+    "volume_2d": 178800
+  },
+  "MTMH": {
+    "price": 1195.0,
+    "volume_2d": 22500
+  },
+  "MTPS": {
+    "price": 81.0,
+    "volume_2d": 0
+  },
+  "MTSM": {
+    "price": 500.0,
+    "volume_2d": 0
+  },
+  "MUTU": {
+    "price": 122.0,
+    "volume_2d": 4188350
+  },
+  "MYOH": {
+    "price": 1420.0,
+    "volume_2d": 24750
+  },
+  "MYOR": {
+    "price": 2040.0,
+    "volume_2d": 16719600
+  },
+  "NAIK": {
+    "price": 126.0,
+    "volume_2d": 21624150
+  },
+  "NANO": {
+    "price": 56.0,
+    "volume_2d": 44508750
+  },
+  "NASI": {
+    "price": 129.0,
+    "volume_2d": 108661650
+  },
+  "NAYZ": {
+    "price": 62.0,
+    "volume_2d": 4798700
+  },
+  "NCKL": {
+    "price": 1420.0,
+    "volume_2d": 238278650
+  },
+  "NELY": {
+    "price": 448.0,
+    "volume_2d": 12358450
+  },
+  "NEST": {
+    "price": 350.0,
+    "volume_2d": 20520600
+  },
+  "NETV": {
+    "price": 171.0,
+    "volume_2d": 41417050
+  },
+  "NICE": {
+    "price": 480.0,
+    "volume_2d": 29133200
+  },
+  "NICL": {
+    "price": 1645.0,
+    "volume_2d": 93396550
+  },
+  "NIKL": {
+    "price": 424.0,
+    "volume_2d": 10964750
+  },
+  "NIRO": {
+    "price": 322.0,
+    "volume_2d": 466950
+  },
+  "NPGF": {
+    "price": 69.0,
+    "volume_2d": 61262800
+  },
+  "NRCA": {
+    "price": 1185.0,
+    "volume_2d": 30077850
+  },
+  "NTBK": {
+    "price": 122.0,
+    "volume_2d": 21850700
+  },
+  "NZIA": {
+    "price": 116.0,
+    "volume_2d": 2092900
+  },
+  "OBAT": {
+    "price": 390.0,
+    "volume_2d": 1222400
+  },
+  "OBMD": {
+    "price": 290.0,
+    "volume_2d": 1413900
+  },
+  "OILS": {
+    "price": 228.0,
+    "volume_2d": 1264700
+  },
+  "OKAS": {
+    "price": 145.0,
+    "volume_2d": 6104950
+  },
+  "OLIV": {
+    "price": 67.0,
+    "volume_2d": 11033950
+  },
+  "OMED": {
+    "price": 230.0,
+    "volume_2d": 4829650
+  },
+  "OMRE": {
+    "price": 570.0,
+    "volume_2d": 10150
+  },
+  "PACK": {
+    "price": 358.0,
+    "volume_2d": 5093850
+  },
+  "PADA": {
+    "price": 312.0,
+    "volume_2d": 71704650
+  },
+  "PALM": {
+    "price": 400.0,
+    "volume_2d": 3830600
+  },
+  "PANI": {
+    "price": 11850.0,
+    "volume_2d": 9870700
+  },
+  "PANR": {
+    "price": 625.0,
+    "volume_2d": 1692250
+  },
+  "PART": {
+    "price": 109.0,
+    "volume_2d": 16696600
+  },
+  "PBID": {
+    "price": 488.0,
+    "volume_2d": 352500
+  },
+  "PCAR": {
+    "price": 53.0,
+    "volume_2d": 15338400
+  },
+  "PDES": {
+    "price": 565.0,
+    "volume_2d": 62950
+  },
+  "PDPP": {
+    "price": 338.0,
+    "volume_2d": 207650
+  },
+  "PEHA": {
+    "price": 306.0,
+    "volume_2d": 143700
+  },
+  "PEVE": {
+    "price": 630.0,
+    "volume_2d": 219650
+  },
+  "PGAS": {
+    "price": 2020.0,
+    "volume_2d": 56206500
+  },
+  "PGEO": {
+    "price": 1300.0,
+    "volume_2d": 93319750
+  },
+  "PGLI": {
+    "price": 302.0,
+    "volume_2d": 4176950
+  },
+  "PGUN": {
+    "price": 9600.0,
+    "volume_2d": 43450
+  },
+  "PICO": {
+    "price": 224.0,
+    "volume_2d": 793650
+  },
+  "PIPA": {
+    "price": 276.0,
+    "volume_2d": 40410150
+  },
+  "PJAA": {
+    "price": 610.0,
+    "volume_2d": 696200
+  },
+  "PKPK": {
+    "price": 1965.0,
+    "volume_2d": 3129450
+  },
+  "PLAN": {
+    "price": 57.0,
+    "volume_2d": 10916450
+  },
+  "PLIN": {
+    "price": 2510.0,
+    "volume_2d": 0
+  },
+  "PMJS": {
+    "price": 120.0,
+    "volume_2d": 262950
+  },
+  "PMUI": {
+    "price": 151.0,
+    "volume_2d": 10343250
+  },
+  "PNBS": {
+    "price": 59.0,
+    "volume_2d": 26724750
+  },
+  "PNGO": {
+    "price": 3540.0,
+    "volume_2d": 221300
+  },
+  "PNSE": {
+    "price": 815.0,
+    "volume_2d": 114600
+  },
+  "POLU": {
+    "price": 27100.0,
+    "volume_2d": 77250
+  },
+  "POWR": {
+    "price": 710.0,
+    "volume_2d": 1577500
+  },
+  "PPRE": {
+    "price": 214.0,
+    "volume_2d": 129626450
+  },
+  "PPRI": {
+    "price": 336.0,
+    "volume_2d": 5093500
+  },
+  "PPRO": {
+    "price": 21.0,
+    "volume_2d": 0
+  },
+  "PRAY": {
+    "price": 860.0,
+    "volume_2d": 16500
+  },
+  "PRDA": {
+    "price": 2400.0,
+    "volume_2d": 557150
+  },
+  "PRIM": {
+    "price": 88.0,
+    "volume_2d": 15858600
+  },
+  "PSAB": {
+    "price": 625.0,
+    "volume_2d": 316219500
+  },
+  "PSAT": {
+    "price": 1230.0,
+    "volume_2d": 509550
+  },
+  "PSDN": {
+    "price": 138.0,
+    "volume_2d": 1712150
+  },
+  "PSGO": {
+    "price": 210.0,
+    "volume_2d": 608650
+  },
+  "PSKT": {
+    "price": 322.0,
+    "volume_2d": 316994650
+  },
+  "PSSI": {
+    "price": 364.0,
+    "volume_2d": 833650
+  },
+  "PTBA": {
+    "price": 2450.0,
+    "volume_2d": 18706850
+  },
+  "PTIS": {
+    "price": 352.0,
+    "volume_2d": 78600
+  },
+  "PTMP": {
+    "price": 86.0,
+    "volume_2d": 18218550
+  },
+  "PTMR": {
+    "price": 374.0,
+    "volume_2d": 0
+  },
+  "PTPP": {
+    "price": 396.0,
+    "volume_2d": 23844500
+  },
+  "PTPS": {
+    "price": 189.0,
+    "volume_2d": 5938600
+  },
+  "PTSP": {
+    "price": 1010.0,
+    "volume_2d": 27300
+  },
+  "PWON": {
+    "price": 384.0,
+    "volume_2d": 190430850
+  },
+  "PZZA": {
+    "price": 234.0,
+    "volume_2d": 3396800
+  },
+  "RAAM": {
+    "price": 248.0,
+    "volume_2d": 4047700
+  },
+  "RAFI": {
+    "price": 54.0,
+    "volume_2d": 21318650
+  },
+  "RAJA": {
+    "price": 6700.0,
+    "volume_2d": 44580450
+  },
+  "RALS": {
+    "price": 444.0,
+    "volume_2d": 4101500
+  },
+  "RANC": {
+    "price": 875.0,
+    "volume_2d": 43050
+  },
+  "RATU": {
+    "price": 8675.0,
+    "volume_2d": 10922150
+  },
+  "RBMS": {
+    "price": 68.0,
+    "volume_2d": 23131100
+  },
+  "RDTX": {
+    "price": 15450.0,
+    "volume_2d": 71450
+  },
+  "RGAS": {
+    "price": 100.0,
+    "volume_2d": 1468150
+  },
+  "RIGS": {
+    "price": 800.0,
+    "volume_2d": 181950
+  },
+  "RISE": {
+    "price": 10050.0,
+    "volume_2d": 774900
+  },
+  "RMKE": {
+    "price": 7875.0,
+    "volume_2d": 0
+  },
+  "RMKO": {
+    "price": 740.0,
+    "volume_2d": 2092900
+  },
+  "ROCK": {
+    "price": 2160.0,
+    "volume_2d": 222000
+  },
+  "RODA": {
+    "price": 63.0,
+    "volume_2d": 6841500
+  },
+  "ROTI": {
+    "price": 780.0,
+    "volume_2d": 271050
+  },
+  "RSGK": {
+    "price": 980.0,
+    "volume_2d": 0
+  },
+  "RUIS": {
+    "price": 292.0,
+    "volume_2d": 5817650
+  },
+  "SAFE": {
+    "price": 394.0,
+    "volume_2d": 572650
+  },
+  "SAME": {
+    "price": 352.0,
+    "volume_2d": 2095200
+  },
+  "SAMF": {
+    "price": 314.0,
+    "volume_2d": 420050
+  },
+  "SAPX": {
+    "price": 308.0,
+    "volume_2d": 312150
+  },
+  "SATU": {
+    "price": 270.0,
+    "volume_2d": 3657400
+  },
+  "SBMA": {
+    "price": 137.0,
+    "volume_2d": 5566350
+  },
+  "SCCO": {
+    "price": 2330.0,
+    "volume_2d": 57450
+  },
+  "SCNP": {
+    "price": 179.0,
+    "volume_2d": 626050
+  },
+  "SCPI": {
+    "price": 29000.0,
+    "volume_2d": 0
+  },
+  "SEMA": {
+    "price": 123.0,
+    "volume_2d": 1876300
+  },
+  "SGER": {
+    "price": 540.0,
+    "volume_2d": 72900200
+  },
+  "SGRO": {
+    "price": 7625.0,
+    "volume_2d": 1366900
+  },
+  "SHID": {
+    "price": 935.0,
+    "volume_2d": 18000
+  },
+  "SHIP": {
+    "price": 4610.0,
+    "volume_2d": 18100
+  },
+  "SICO": {
+    "price": 135.0,
+    "volume_2d": 4775450
+  },
+  "SIDO": {
+    "price": 540.0,
+    "volume_2d": 22848800
+  },
+  "SILO": {
+    "price": 2600.0,
+    "volume_2d": 1217350
+  },
+  "SIMP": {
+    "price": 595.0,
+    "volume_2d": 8087450
+  },
+  "SIPD": {
+    "price": 1600.0,
+    "volume_2d": 0
+  },
+  "SKBM": {
+    "price": 595.0,
+    "volume_2d": 1596750
+  },
+  "SKLT": {
+    "price": 250.0,
+    "volume_2d": 438500
+  },
+  "SKRN": {
+    "price": 492.0,
+    "volume_2d": 629600
+  },
+  "SLIS": {
+    "price": 111.0,
+    "volume_2d": 75696050
+  },
+  "SMAR": {
+    "price": 5600.0,
+    "volume_2d": 410300
+  },
+  "SMBR": {
+    "price": 300.0,
+    "volume_2d": 11367200
+  },
+  "SMCB": {
+    "price": 775.0,
+    "volume_2d": 0
+  },
+  "SMDM": {
+    "price": 830.0,
+    "volume_2d": 156050
+  },
+  "SMDR": {
+    "price": 422.0,
+    "volume_2d": 94835750
+  },
+  "SMGA": {
+    "price": 124.0,
+    "volume_2d": 80708950
+  },
+  "SMGR": {
+    "price": 2640.0,
+    "volume_2d": 12349700
+  },
+  "SMIL": {
+    "price": 346.0,
+    "volume_2d": 96415000
+  },
+  "SMKL": {
+    "price": 185.0,
+    "volume_2d": 1713200
+  },
+  "SMLE": {
+    "price": 194.0,
+    "volume_2d": 4123750
+  },
+  "SMMT": {
+    "price": 1330.0,
+    "volume_2d": 184900
+  },
+  "SMRA": {
+    "price": 410.0,
+    "volume_2d": 128584150
+  },
+  "SMSM": {
+    "price": 1765.0,
+    "volume_2d": 2947700
+  },
+  "SNLK": {
+    "price": 372.0,
+    "volume_2d": 9348650
+  },
+  "SOCI": {
+    "price": 705.0,
+    "volume_2d": 0
+  },
+  "SOFA": {
+    "price": 450.0,
+    "volume_2d": 16102450
+  },
+  "SOHO": {
+    "price": 3380.0,
+    "volume_2d": 1638500
+  },
+  "SOLA": {
+    "price": 144.0,
+    "volume_2d": 304493400
+  },
+  "SONA": {
+    "price": 2400.0,
+    "volume_2d": 97700
+  },
+  "SOSS": {
+    "price": 935.0,
+    "volume_2d": 15100
+  },
+  "SOTS": {
+    "price": 5025.0,
+    "volume_2d": 0
+  },
+  "SOUL": {
+    "price": 74.0,
+    "volume_2d": 1776650
+  },
+  "SPMA": {
+    "price": 242.0,
+    "volume_2d": 833300
+  },
+  "SPRE": {
+    "price": 324.0,
+    "volume_2d": 20985850
+  },
+  "SPTO": {
+    "price": 645.0,
+    "volume_2d": 804500
+  },
+  "SRTG": {
+    "price": 1820.0,
+    "volume_2d": 21035100
+  },
+  "SSIA": {
+    "price": 1840.0,
+    "volume_2d": 32171650
+  },
+  "SSTM": {
+    "price": 3130.0,
+    "volume_2d": 1235350
+  },
+  "STAA": {
+    "price": 1300.0,
+    "volume_2d": 4504250
+  },
+  "STTP": {
+    "price": 9775.0,
+    "volume_2d": 2000
+  },
+  "SULI": {
+    "price": 141.0,
+    "volume_2d": 2625300
+  },
+  "SUNI": {
+    "price": 820.0,
+    "volume_2d": 580900
+  },
+  "SUPR": {
+    "price": 43850.0,
+    "volume_2d": 0
+  },
+  "SURI": {
+    "price": 93.0,
+    "volume_2d": 3278850
+  },
+  "SWID": {
+    "price": 134.0,
+    "volume_2d": 56223150
+  },
+  "TALF": {
+    "price": 685.0,
+    "volume_2d": 1951200
+  },
+  "TAMU": {
+    "price": 75.0,
+    "volume_2d": 87397450
+  },
+  "TAPG": {
+    "price": 1470.0,
+    "volume_2d": 10477500
+  },
+  "TARA": {
+    "price": 57.0,
+    "volume_2d": 16067200
+  },
+  "TAXI": {
+    "price": 33.0,
+    "volume_2d": 139452700
+  },
+  "TBIG": {
+    "price": 2240.0,
+    "volume_2d": 6410600
+  },
+  "TBMS": {
+    "price": 1500.0,
+    "volume_2d": 139750
+  },
+  "TCID": {
+    "price": 2940.0,
+    "volume_2d": 7300
+  },
+  "TCPI": {
+    "price": 10150.0,
+    "volume_2d": 8538550
+  },
+  "TEBE": {
+    "price": 2160.0,
+    "volume_2d": 4740350
+  },
+  "TECH": {
+    "price": 50.0,
+    "volume_2d": 0
+  },
+  "TELE": {
+    "price": 9.0,
+    "volume_2d": 0
+  },
+  "TFAS": {
+    "price": 264.0,
+    "volume_2d": 557800
+  },
+  "TFCO": {
+    "price": 605.0,
+    "volume_2d": 1450
+  },
+  "TGKA": {
+    "price": 5075.0,
+    "volume_2d": 4900
+  },
+  "TGUK": {
+    "price": 137.0,
+    "volume_2d": 0
+  },
+  "TINS": {
+    "price": 3870.0,
+    "volume_2d": 124017050
+  },
+  "TIRA": {
+    "price": 1295.0,
+    "volume_2d": 208850
+  },
+  "TIRT": {
+    "price": 320.0,
+    "volume_2d": 917750
+  },
+  "TKIM": {
+    "price": 7900.0,
+    "volume_2d": 1752700
+  },
+  "TLDN": {
+    "price": 660.0,
+    "volume_2d": 794150
+  },
+  "TLKM": {
+    "price": 3660.0,
+    "volume_2d": 91080600
+  },
+  "TMAS": {
+    "price": 169.0,
+    "volume_2d": 54575650
+  },
+  "TMPO": {
+    "price": 173.0,
+    "volume_2d": 5027750
+  },
+  "TNCA": {
+    "price": 258.0,
+    "volume_2d": 2035300
+  },
+  "TOBA": {
+    "price": 820.0,
+    "volume_2d": 61895400
+  },
+  "TOOL": {
+    "price": 68.0,
+    "volume_2d": 41804350
+  },
+  "TOTL": {
+    "price": 1040.0,
+    "volume_2d": 1964600
+  },
+  "TOTO": {
+    "price": 272.0,
+    "volume_2d": 949300
+  },
+  "TOWR": {
+    "price": 550.0,
+    "volume_2d": 38383950
+  },
+  "TPIA": {
+    "price": 6675.0,
+    "volume_2d": 7282700
+  },
+  "TPMA": {
+    "price": 605.0,
+    "volume_2d": 8016450
+  },
+  "TRIN": {
+    "price": 1610.0,
+    "volume_2d": 30381700
+  },
+  "TRIS": {
+    "price": 238.0,
+    "volume_2d": 28305650
+  },
+  "TRJA": {
+    "price": 187.0,
+    "volume_2d": 2975650
+  },
+  "TRST": {
+    "price": 498.0,
+    "volume_2d": 34400
+  },
+  "TRUE": {
+    "price": 530.0,
+    "volume_2d": 0
+  },
+  "TRUK": {
+    "price": 545.0,
+    "volume_2d": 513200
+  },
+  "TSPC": {
+    "price": 2840.0,
+    "volume_2d": 798350
+  },
+  "TYRE": {
+    "price": 127.0,
+    "volume_2d": 398650
+  },
+  "UCID": {
+    "price": 440.0,
+    "volume_2d": 3165600
+  },
+  "UDNG": {
+    "price": 3910.0,
+    "volume_2d": 4178400
+  },
+  "UFOE": {
+    "price": 189.0,
+    "volume_2d": 972750
+  },
+  "ULTJ": {
+    "price": 1460.0,
+    "volume_2d": 4730350
+  },
+  "UNIC": {
+    "price": 9400.0,
+    "volume_2d": 7500
+  },
+  "UNIQ": {
+    "price": 306.0,
+    "volume_2d": 42680350
+  },
+  "UNTR": {
+    "price": 31050.0,
+    "volume_2d": 2764600
+  },
+  "UNVR": {
+    "price": 2450.0,
+    "volume_2d": 33606600
+  },
+  "URBN": {
+    "price": 214.0,
+    "volume_2d": 877400
+  },
+  "UVCR": {
+    "price": 190.0,
+    "volume_2d": 29907200
+  },
+  "VERN": {
+    "price": 126.0,
+    "volume_2d": 6055750
+  },
+  "VICI": {
+    "price": 695.0,
+    "volume_2d": 37717100
+  },
+  "VISI": {
+    "price": 322.0,
+    "volume_2d": 4430050
+  },
+  "VIVA": {
+    "price": 81.0,
+    "volume_2d": 199328250
+  },
+  "VKTR": {
+    "price": 1030.0,
+    "volume_2d": 169146400
+  },
+  "VOKS": {
+    "price": 260.0,
+    "volume_2d": 290600
+  },
+  "WAPO": {
+    "price": 195.0,
+    "volume_2d": 12302500
+  },
+  "WEGE": {
+    "price": 69.0,
+    "volume_2d": 29783700
+  },
+  "WEHA": {
+    "price": 147.0,
+    "volume_2d": 49591850
+  },
+  "WIDI": {
+    "price": 44.0,
+    "volume_2d": 27427200
+  },
+  "WIFI": {
+    "price": 3070.0,
+    "volume_2d": 41541450
+  },
+  "WIKA": {
+    "price": 204.0,
+    "volume_2d": 0
+  },
+  "WINR": {
+    "price": 68.0,
+    "volume_2d": 109850300
+  },
+  "WINS": {
+    "price": 500.0,
+    "volume_2d": 7098950
+  },
+  "WIRG": {
+    "price": 103.0,
+    "volume_2d": 74454600
+  },
+  "WMUU": {
+    "price": 85.0,
+    "volume_2d": 127764000
+  },
+  "WOOD": {
+    "price": 362.0,
+    "volume_2d": 2125850
+  },
+  "WOWS": {
+    "price": 94.0,
+    "volume_2d": 44618800
+  },
+  "WSKT": {
+    "price": 202.0,
+    "volume_2d": 0
+  },
+  "WTON": {
+    "price": 102.0,
+    "volume_2d": 11744900
+  },
+  "YELO": {
+    "price": 132.0,
+    "volume_2d": 97613100
+  },
+  "YPAS": {
+    "price": 680.0,
+    "volume_2d": 428500
+  },
+  "YUPI": {
+    "price": 1605.0,
+    "volume_2d": 44200
+  },
+  "ZATA": {
+    "price": 81.0,
+    "volume_2d": 891061800
+  },
+  "ZONE": {
+    "price": 515.0,
+    "volume_2d": 191600
+  }
+}

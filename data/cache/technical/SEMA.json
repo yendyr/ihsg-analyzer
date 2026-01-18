@@ -1,0 +1,9 @@
+{
+  "ticker": "SEMA",
+  "price": 123.0,
+  "rsi": 53.1,
+  "trend": "Uptrend",
+  "support": 116.0,
+  "resistance": 128.0,
+  "as_of": "2026-01-18 15:29:22"
+}

@@ -8,12 +8,16 @@ def narrative(t, fund, tech):
 
 def build(t, market, fund, tech, val):
     price = market["price"]
-    upside = (val["moderate"]-price)/price*100
+    if val is None:
+        upside = None
+    else:
+        upside = (val["moderate"] - price) / price * 100
+
     return {
         "ticker": t,
         "price": price,
         "valuation": val,
-        "upside_%": round(upside,2),
+        "upside_%": round(upside, 2) if isinstance(upside, (int, float)) else None,
         "consensus": fund.get("targetPrice"),
         "technical": tech,
         "narrative": narrative(t,fund,tech)

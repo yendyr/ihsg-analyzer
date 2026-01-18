@@ -30,7 +30,10 @@ def main():
         val = sector_valuation(market[t]["price"], fund[t])
         reports.append(build(t, market[t], fund[t], tech, val))
 
-    reports.sort(key=lambda x: x["upside_%"], reverse=True)
+    reports.sort(
+        key=lambda x: x["upside_%"] if isinstance(x["upside_%"], (int, float)) else -999,
+        reverse=True
+    )
 
     REPORT_FILE.write_text(json.dumps(reports, indent=2))
     set_expire("report", datetime.now().replace(hour=8,minute=30))

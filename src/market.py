@@ -16,7 +16,7 @@ def fetch(tickers):
                 "price": float(hist["Close"].iloc[-1]),
                 "volume_2d": int(hist["Volume"].tail(2).mean())
             }
-            time.sleep(0.3)
+            time.sleep(0.2)
         except Exception:
             continue
     return data

@@ -1,0 +1,9 @@
+{
+  "ticker": "TECH",
+  "price": 50.0,
+  "rsi": 100.0,
+  "trend": "Downtrend",
+  "support": 50.0,
+  "resistance": 50.0,
+  "as_of": "2026-01-18 16:25:37"
+}
