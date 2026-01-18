@@ -1,15 +1,17 @@
 import yfinance as yf
 import ta
 
-def analyze(ticker):
-    df = yf.download(f"{ticker}.JK", period="6mo", progress=False)
+def analyze(t):
+    df = yf.download(f"{t}.JK", period="6mo", progress=False)
+    if df.empty:
+        return None
     rsi = ta.momentum.RSIIndicator(df["Close"]).rsi().iloc[-1]
-    trend = "Uptrend" if df["Close"].iloc[-1] > df["Close"].rolling(50).mean().iloc[-1] else "Downtrend"
-    support = df["Low"].tail(20).min()
-    resistance = df["High"].tail(20).max()
+    ma50 = df["Close"].rolling(50).mean().iloc[-1]
+    price = df["Close"].iloc[-1]
+    trend = "Uptrend" if price > ma50 else "Downtrend"
     return {
-        "rsi": round(float(rsi), 2),
+        "rsi": round(float(rsi),2),
         "trend": trend,
-        "support": round(float(support), 2),
-        "resistance": round(float(resistance), 2)
+        "support": round(float(df["Low"].tail(20).min()),2),
+        "resistance": round(float(df["High"].tail(20).max()),2)
     }

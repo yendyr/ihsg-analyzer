@@ -1,11 +1,20 @@
+def narrative(t, fund, tech):
+    return (
+        f"{t} berada di sektor {fund.get('sector')}. "
+        f"PBV {round(fund.get('priceToBook',0),2)} dan ROE "
+        f"{round((fund.get('returnOnEquity') or 0)*100,2)}%. "
+        f"Secara teknikal RSI {tech['rsi']} dan trend {tech['trend']}."
+    )
+
 def build(t, market, fund, tech, val):
     price = market["price"]
+    upside = (val["moderate"]-price)/price*100
     return {
         "ticker": t,
         "price": price,
-        "pbv": fund["pbv"],
-        "roe": fund["roe"],
         "valuation": val,
-        "upside_moderate_%": round((val["moderate"] - price) / price * 100, 2),
-        "technical": tech
+        "upside_%": round(upside,2),
+        "consensus": fund.get("targetPrice"),
+        "technical": tech,
+        "narrative": narrative(t,fund,tech)
     }

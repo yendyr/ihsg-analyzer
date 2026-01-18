@@ -1,32 +1,39 @@
 import json
 from datetime import datetime
-from cache import is_expired, set_expire
-from config import REPORT_FILE
-from issi import get_issi_list
-from market import get_market_data
-from fundamental import get_fundamental, screening
+from issi import get
+from market import get as get_market
+from fundamental import get as get_fund
 from technical import analyze
-from valuation import calculate
+from valuation import sector_valuation
 from report import build
+from config import REPORT_FILE
+from cache import is_expired, set_expire
 
 def main():
-    if REPORT_FILE.exists() and not is_expired("report_expire"):
+    if REPORT_FILE.exists() and not is_expired("report"):
         print(REPORT_FILE.read_text())
         return
 
-    issi = get_issi_list()
-    market = get_market_data(issi)
-    fund = get_fundamental(issi)
-    passed = screening(issi, market, fund)
+    issi = get()
+    market = get_market(issi)
+    fund = get_fund(issi)
 
     reports = []
-    for t in passed:
+    for t in issi:
+        if t not in market or t not in fund:
+            continue
+        if not fund[t].get("priceToBook"):
+            continue
         tech = analyze(t)
-        val = calculate(market[t]["price"], fund[t]["roe"])
+        if not tech:
+            continue
+        val = sector_valuation(market[t]["price"], fund[t])
         reports.append(build(t, market[t], fund[t], tech, val))
 
+    reports.sort(key=lambda x: x["upside_%"], reverse=True)
+
     REPORT_FILE.write_text(json.dumps(reports, indent=2))
-    set_expire("report_expire", datetime.now().replace(hour=8, minute=30))
+    set_expire("report", datetime.now().replace(hour=8,minute=30))
     print(json.dumps(reports, indent=2))
 
 if __name__ == "__main__":

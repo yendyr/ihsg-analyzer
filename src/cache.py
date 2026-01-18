@@ -3,9 +3,7 @@ from datetime import datetime
 from config import META_FILE
 
 def load_meta():
-    if META_FILE.exists():
-        return json.loads(META_FILE.read_text())
-    return {}
+    return json.loads(META_FILE.read_text()) if META_FILE.exists() else {}
 
 def save_meta(meta):
     META_FILE.write_text(json.dumps(meta, indent=2))
@@ -13,9 +11,7 @@ def save_meta(meta):
 def is_expired(key):
     meta = load_meta()
     exp = meta.get(key)
-    if not exp:
-        return True
-    return datetime.now() >= datetime.fromisoformat(exp)
+    return not exp or datetime.now() >= datetime.fromisoformat(exp)
 
 def set_expire(key, dt):
     meta = load_meta()
